@@ -16,6 +16,9 @@ Install these requisites
 ## Usage
 
 ```
+Put this project on C driver to run instantly. Or change path in InputData.py
+
+*Run*
 py Test.py
 ```
 
