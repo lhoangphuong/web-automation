@@ -2,13 +2,13 @@
 
 Test Amazon.com with Python and Selenium WebDriver
 
-## Installation
-Install python3, then run these command to install requisites
+## Requisites
+Install python3. All package will be install automatically. But you can manually install them by:
 
 ```bash
 pip install selenium
 
-pip install unittest
+pip install unittest2
 
 pip install html-testRunner
 ```
