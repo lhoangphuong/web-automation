@@ -38,6 +38,10 @@ class BaseClass():
         web_element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
         assert web_element.text == element_text
 
+##############################################################################################################################
+
+# --- Start Writing code for Pages ---
+
 class HomePage(BaseClass):
     ''' Home Page of Amazon.com '''
     def __init__(self, driver):
