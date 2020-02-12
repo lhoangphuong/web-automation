@@ -3,14 +3,13 @@
 Test Amazon.com with Python and Selenium WebDriver
 
 ## Installation
-
-Install these requisites
+Install python 3
+Run these command to install requisites
 
 ```bash
-1. python (3.xx)
-2. selenium
-3. unittest
-4. HtmlTestRunner
+pip install selenium
+pip install unittest
+pip install html-testRunner
 ```
 
 ## Usage
