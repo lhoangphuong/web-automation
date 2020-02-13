@@ -4,6 +4,7 @@ class Input():
     # --- Web Driver path ---
     CHROME_DRIVER = "C:/web-automation/Drivers/chromedriver.exe"
     FIREFOX_DRIVER = "C:/web-automation/geckodriver.exe"
+    DELAY = 2
 
     # --- Amazon Page ---
     BASE_URL = "https://www.amazon.com"

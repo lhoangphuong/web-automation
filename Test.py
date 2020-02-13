@@ -68,16 +68,17 @@ class Test_AMZ_Search(Test_Base):
         self.searchResultPage = SearchResultPage(self.driver)
         self.homePage.search()
         self.searchResultPage.click_search_result()
-        time.sleep(5)
+        time.sleep(Input.DELAY)
 
     def test_user_should_be_able_to_add_item_to_cart(self):
         self.homePage = HomePage(self.driver)
         self.searchResultPage = SearchResultPage(self.driver)
         self.cartPage = CartPage(self.driver)
-        self.searchResultPage.click_search_result()
+
+        self.homePage.search()
         self.searchResultPage.click_search_result()
         self.cartPage.click_add_to_cart()
-        time.sleep(5)
+        time.sleep(Input.DELAY)
 
         
 # Boiler plate code to get the code running
