@@ -6,7 +6,7 @@ class Input():
     FIREFOX_DRIVER = "C:/web-automation/geckodriver.exe"
 
     # --- Amazon Page ---
-    BASE_URL = "https://www.amazon.com"
+    BASE_URL = "https://www.amazon.vn"
     HOME_PAGE_TITLE = "Amazon.com"
     SEARCH_TERM = "iPhone 8"
     NO_RESULTS_TEXT = "No results found."

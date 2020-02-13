@@ -26,3 +26,10 @@ class SearchResultPage(BaseClass):
 
     def click_search_result(self):
         self.click(Locators.SEARCH_RESULT_LINK)
+
+class CartPage(BaseClass):
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    def click_add_to_cart(self):
+        self.click(Locators.ADD_TO_CART_BUTTON)

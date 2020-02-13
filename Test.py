@@ -31,7 +31,7 @@ from selenium import webdriver
 # project module
 from Resources.Input import Input
 from Resources.Locators import Locators
-from Resources.Pages import HomePage, SearchResultPage
+from Resources.Pages import HomePage, SearchResultPage, CartPage
 
 ##########################################################
 #                                                        #
@@ -63,12 +63,22 @@ class Test_AMZ_Search(Test_Base):
         self.assertIn(Input.HOME_PAGE_TITLE, self.homePage.driver.title)
         time.sleep(5)
 
-    def test_user_should_be_able_search(self):
+    def test_user_should_be_able_to_search(self):
         self.homePage = HomePage(self.driver)
         self.searchResultPage = SearchResultPage(self.driver)
         self.homePage.search()
         self.searchResultPage.click_search_result()
         time.sleep(5)
+
+    def test_user_should_be_able_to_add_item_to_cart(self):
+        self.homePage = HomePage(self.driver)
+        self.searchResultPage = SearchResultPage(self.driver)
+        self.cartPage = CartPage(self.driver)
+        
+        self.searchResultPage.click_search_result()
+        self.cartPage.click_add_to_cart()
+        time.sleep(5)
+
         
 # Boiler plate code to get the code running
 if __name__ == '__main__':

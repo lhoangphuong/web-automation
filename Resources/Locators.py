@@ -9,3 +9,6 @@ class Locators():
 
     # ---  Search Result Page Locators ---
     SEARCH_RESULT_LINK = (By.XPATH, "(//div[@class='sg-col-inner']//img[contains(@data-image-latency,'s-product-image')])[2]")
+
+    # --- Cart Page
+    ADD_TO_CART_BUTTON = (By.ID, 'add-to-cart-button')
