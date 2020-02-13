@@ -29,9 +29,9 @@ import HtmlTestRunner
 from selenium import webdriver
 
 # project module
-from InputData import InputData
-from Locators import Locators
-from Pages import HomePage
+from Resources.Input import Input
+from Resources.Locators import Locators
+from Resources.Pages import HomePage, SearchResultPage
 
 ##########################################################
 #                                                        #
@@ -42,7 +42,7 @@ from Pages import HomePage
 class Test_Base(unittest.TestCase):
     def setUp(self):
         # Setting up how we want Chrome to run
-        self.driver=webdriver.Chrome(InputData.CHROME_DRIVER)
+        self.driver=webdriver.Chrome(Input.CHROME_DRIVER)
         #browser should be loaded in maximized window
         self.driver.maximize_window()
 
@@ -55,15 +55,21 @@ class Test_AMZ_Search(Test_Base):
     def setUp(self):
         super().setUp()
 
-    def test_home_page(self):
+    def test_home_page_load_successfully(self):
         # instantiate an object of HomePage class. Remember when the constructor of HomePage class is called
         # it opens up the browser and navigates to Home Page of the site under test.
         self.homePage=HomePage(self.driver)
         # assert if the title of Home Page contains Amazon.in
-        self.assertIn(InputData.HOME_PAGE_TITLE, self.homePage.driver.title)
-        self.homePage.search()
+        self.assertIn(Input.HOME_PAGE_TITLE, self.homePage.driver.title)
         time.sleep(5)
 
+    def test_user_should_be_able_search(self):
+        self.homePage = HomePage(self.driver)
+        self.searchResultPage = SearchResultPage(self.driver)
+        self.homePage.search()
+        self.searchResultPage.click_search_result()
+        time.sleep(5)
+        
 # Boiler plate code to get the code running
 if __name__ == '__main__':
     # specify path where the HTML reports for testcase execution are to be generated
