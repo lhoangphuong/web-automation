@@ -74,7 +74,7 @@ class Test_AMZ_Search(Test_Base):
         self.homePage = HomePage(self.driver)
         self.searchResultPage = SearchResultPage(self.driver)
         self.cartPage = CartPage(self.driver)
-        
+        self.searchResultPage.click_search_result()
         self.searchResultPage.click_search_result()
         self.cartPage.click_add_to_cart()
         time.sleep(5)
